@@ -2,3 +2,5 @@ flask
 python-dotenv
 flask-cors
 firebase-admin 
+flask-bcrypt
+flask-jwt-extended

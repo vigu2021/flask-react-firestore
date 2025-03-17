@@ -175,3 +175,4 @@ cython_debug/
 
 # Firebase service account key
 invertible-jet-453116-v6-91d9496e9782.json
+secret_key.env
