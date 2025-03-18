@@ -9,7 +9,9 @@ from flask_jwt_extended import create_access_token, jwt_required, get_jwt_identi
 from datetime import timedelta
 app = Flask(__name__)
 
-CORS(app,origins=['http://localhost:3000'])
+
+
+CORS(app,origins=['http://localhost:5173'],supports_credentials=True)
 db = initialize_firebase()
 
 
@@ -27,9 +29,10 @@ def home():
     return jsonify({"message": "Flask API is running!"})
 
 
-@app.route('/create_user', methods=['POST'])
-def create_user():
+@app.route('/register', methods=['POST'])
+def register():
     data = request.json
+    print("Received registration data: ", data)
     if not data:
         return jsonify({"message": "No data provided"}), 400
 
